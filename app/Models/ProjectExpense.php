@@ -1,33 +1,29 @@
 <?php
 
-namespace App\Models;
+namespace App\Http\Controllers\Api;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Http\Controllers\Controller;
+use App\Models\Project;
+use App\Models\ProjectExpense;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
-class ProjectExpense extends Model
+class ProjectExpenseController extends Controller
 {
-    use HasFactory;
-
-    protected $fillable = [
-        'project_id', 'title', 'description', 'category',
-        'amount', 'expense_date', 'attachment_path', 'created_by',
-    ];
-
-    protected $casts = [
-        'amount' => 'decimal:2',
-        'expense_date' => 'date',
-    ];
-
-    public function project(): BelongsTo
+    public function index(Project $project): JsonResponse
     {
-        return $this->belongsTo(Project::class);
-    }
+        $expenses = ProjectExpense::query()
+            ->where('project_id', $project->id)
+            ->with('creator')
+            ->latest('expense_date')
+            ->latest('id')
+            ->get();
 
-    public function creator(): BelongsTo
-    {
-        return $this->belongsTo(User::class, 'created_by');
-    }
-}
+        return response()->json([
+            'success' => true,
+            'count' => $expenses->count(),
+            'total' => round(
+                (float) $expenses->sum('amount'),
+                2
+            ),
+           
