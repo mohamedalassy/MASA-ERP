@@ -1,0 +1,522 @@
+/* =========================================================
+   MASA Finance Enterprise UI
+   Append/import after finance.css and accounting-core.css
+   ========================================================= */
+
+.finx-page,
+.finx-page * {
+  box-sizing: border-box;
+}
+
+.finx-page {
+  direction: rtl;
+  color: #1f2430;
+}
+
+.finx-hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 24px;
+  margin-bottom: 16px;
+  border: 1px solid #eceef4;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(102, 87, 245, .09), transparent 28%),
+    linear-gradient(180deg, #fff, #fbfbfd);
+  box-shadow: 0 12px 40px rgba(35, 39, 58, .035);
+  overflow: hidden;
+}
+
+.finx-hero::after {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  border: 30px solid rgba(102, 87, 245, .035);
+  border-radius: 50%;
+  left: -55px;
+  top: -70px;
+  pointer-events: none;
+}
+
+.finx-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #6657f5;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: .02em;
+}
+
+.finx-hero h1 {
+  margin: 7px 0 4px;
+  font-size: 28px;
+  line-height: 1.25;
+}
+
+.finx-hero p {
+  max-width: 760px;
+  margin: 0;
+  color: #8e95a3;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.finx-hero-actions {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.finx-period {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 0 11px;
+  border: 1px solid #e7e9f0;
+  border-radius: 11px;
+  background: #fff;
+  color: #858c99;
+}
+
+.finx-period select {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-family: inherit;
+  color: #454b57;
+  font-weight: 800;
+}
+
+.finx-btn {
+  min-height: 40px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 11px;
+  font-family: inherit;
+  font-weight: 900;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.finx-btn-soft {
+  background: #f2f0ff;
+  color: #6657f5;
+}
+
+.finx-btn-primary {
+  background: #6657f5;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(102, 87, 245, .18);
+}
+
+.finx-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.finx-kpi-card {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  gap: 11px;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #eceef4;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(35, 39, 58, .025);
+}
+
+.finx-kpi-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+}
+
+.finx-kpi-icon.purple { background: #f0edff; color: #6657f5; }
+.finx-kpi-icon.green { background: #eaf9f3; color: #168b63; }
+.finx-kpi-icon.orange { background: #fff4e7; color: #c57a1c; }
+.finx-kpi-icon.red { background: #fff0f2; color: #cb4f63; }
+.finx-kpi-icon.blue { background: #ecf4ff; color: #3977c5; }
+.finx-kpi-icon.cyan { background: #eaf9fb; color: #198c9c; }
+
+.finx-kpi-main {
+  min-width: 0;
+}
+
+.finx-kpi-main span {
+  display: block;
+  color: #939aa8;
+  font-size: 10px;
+  margin-bottom: 5px;
+}
+
+.finx-kpi-main strong {
+  display: block;
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.finx-kpi-meta {
+  grid-column: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  width: max-content;
+  max-width: 100%;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.finx-kpi-meta.positive { color: #168b63; }
+.finx-kpi-meta.negative { color: #cb4f63; }
+.finx-kpi-meta.neutral { color: #8f96a4; }
+
+.finx-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.finx-span-4 { grid-column: span 4; }
+.finx-span-5 { grid-column: span 5; }
+.finx-span-6 { grid-column: span 6; }
+.finx-span-7 { grid-column: span 7; }
+.finx-span-8 { grid-column: span 8; }
+.finx-span-12 { grid-column: span 12; }
+
+.finx-card {
+  border: 1px solid #eceef4;
+  border-radius: 18px;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 10px 32px rgba(35, 39, 58, .03);
+}
+
+.finx-card-head {
+  min-height: 67px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid #f0f1f5;
+}
+
+.finx-card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.finx-card-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: #f2f0ff;
+  color: #6657f5;
+  display: grid;
+  place-items: center;
+}
+
+.finx-card-title h3 {
+  margin: 0;
+  font-size: 13px;
+}
+
+.finx-card-title p {
+  margin: 4px 0 0;
+  color: #9aa1ae;
+  font-size: 9px;
+}
+
+.finx-card-body {
+  padding: 15px 16px;
+}
+
+.finx-insight-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.finx-insight {
+  min-height: 66px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid #eceef4;
+  border-radius: 14px;
+  background: #fbfbfd;
+  color: #6657f5;
+}
+
+.finx-insight div {
+  min-width: 0;
+}
+
+.finx-insight span {
+  display: block;
+  color: #9299a7;
+  font-size: 9px;
+  margin-bottom: 4px;
+}
+
+.finx-insight strong {
+  display: block;
+  color: #222734;
+  font-size: 13px;
+}
+
+.finx-aging-list,
+.finx-profit-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.finx-aging-label,
+.finx-profit-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 6px;
+  font-size: 10px;
+}
+
+.finx-aging-label span {
+  color: #858c9a;
+}
+
+.finx-profit-label > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.finx-profit-label > div span {
+  color: #9aa1ad;
+  font-size: 9px;
+}
+
+.finx-profit-label .positive { color: #168b63; }
+.finx-profit-label .negative { color: #cb4f63; }
+
+.finx-bar-track {
+  position: relative;
+  height: 8px;
+  border-radius: 999px;
+  background: #f0f1f5;
+  overflow: hidden;
+}
+
+.finx-bar-fill,
+.finx-profit-fill {
+  position: absolute;
+  inset-block: 0;
+  right: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #8376ff, #6657f5);
+}
+
+.finx-profit-fill.positive {
+  background: linear-gradient(90deg, #52c99a, #1b9b6f);
+}
+
+.finx-profit-fill.negative {
+  background: linear-gradient(90deg, #ef8293, #cf5367);
+}
+
+.finx-trend {
+  height: 220px;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(38px, 1fr));
+  gap: 12px;
+  align-items: end;
+}
+
+.finx-trend-col {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 7px;
+  text-align: center;
+  color: #969daa;
+  font-size: 9px;
+}
+
+.finx-trend-bars {
+  flex: 1;
+  display: flex;
+  gap: 4px;
+  align-items: end;
+  justify-content: center;
+}
+
+.finx-trend-bar {
+  width: 10px;
+  border-radius: 7px 7px 3px 3px;
+}
+
+.finx-trend-bar.income {
+  background: linear-gradient(180deg, #7d70ff, #6657f5);
+}
+
+.finx-trend-bar.expense {
+  background: linear-gradient(180deg, #f2ab73, #e5863d);
+}
+
+.finx-table-tools {
+  padding: 12px 14px;
+  border-bottom: 1px solid #f0f1f5;
+}
+
+.finx-search {
+  width: min(420px, 100%);
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 11px;
+  border: 1px solid #e7e9f0;
+  border-radius: 10px;
+  color: #9ba1ae;
+  background: #fff;
+}
+
+.finx-search input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-family: inherit;
+}
+
+.finx-table-wrap {
+  overflow: auto;
+}
+
+.finx-table {
+  width: 100%;
+  min-width: 780px;
+  border-collapse: collapse;
+}
+
+.finx-table th {
+  padding: 11px 14px;
+  background: #fafbfc;
+  color: #9299a7;
+  font-size: 9px;
+  font-weight: 800;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.finx-table td {
+  padding: 12px 14px;
+  border-top: 1px solid #f0f1f5;
+  font-size: 10px;
+  vertical-align: middle;
+}
+
+.finx-empty {
+  text-align: center;
+  padding: 28px !important;
+  color: #9aa1ae;
+}
+
+.finx-state {
+  min-height: 200px;
+  border: 1px solid #eceef4;
+  border-radius: 18px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: #8f96a4;
+}
+
+.finx-state strong {
+  color: #333947;
+}
+
+.finx-state-error {
+  color: #c65569;
+}
+
+.finx-loader {
+  width: 28px;
+  height: 28px;
+  border: 3px solid #ece9ff;
+  border-top-color: #6657f5;
+  border-radius: 50%;
+  animation: finxSpin .75s linear infinite;
+}
+
+@keyframes finxSpin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 1100px) {
+  .finx-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .finx-insight-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .finx-span-4,
+  .finx-span-5,
+  .finx-span-6,
+  .finx-span-7,
+  .finx-span-8 {
+    grid-column: span 12;
+  }
+}
+
+@media (max-width: 720px) {
+  .finx-hero {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .finx-hero-actions {
+    flex-wrap: wrap;
+  }
+
+  .finx-kpi-grid,
+  .finx-insight-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+.finx-print-center{margin-bottom:16px;padding:20px;border:1px solid #e8e9f1;border-radius:20px;background:linear-gradient(135deg,#fff 45%,#f4f2ff 100%);box-shadow:0 10px 28px rgba(35,39,58,.04)}
+.finx-print-center-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:16px}.finx-print-center-head span{color:#6657f5;font-size:10px;font-weight:900}.finx-print-center-head h2{margin:5px 0 3px;font-size:18px}.finx-print-center-head p{margin:0;color:#9299a8;font-size:11px}.finx-print-center-head>svg{color:#6657f5}
+.finx-print-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.finx-print-links button{min-height:78px;padding:12px;display:flex;align-items:center;gap:10px;text-align:right;border:1px solid #ebeaf3;border-radius:13px;color:#242938;background:rgba(255,255,255,.88);font-family:inherit;cursor:pointer;transition:.18s ease}.finx-print-links button:hover{transform:translateY(-2px);border-color:#d8d3ff;box-shadow:0 8px 18px rgba(83,73,190,.08)}.finx-print-links button>span{width:38px;height:38px;flex:0 0 auto;display:grid;place-items:center;border-radius:11px;color:#6657f5;background:#f0edff}.finx-print-links button>div{min-width:0;display:flex;flex-direction:column;gap:4px}.finx-print-links strong{font-size:11px}.finx-print-links small{color:#9299a8;font-size:9px;line-height:1.6}
+@media(max-width:1000px){.finx-print-links{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.finx-print-links{grid-template-columns:1fr}}
+@media print{.sidebar,.topbar,.finx-hero-actions,.finx-print-center{display:none!important}.erp-main,.erp-content{margin:0!important;padding:0!important;width:100%!important}.finx-page{padding:0!important}.finx-page::before{content:"MASA ERP — تقرير مالي";display:block;padding:0 0 12px;margin-bottom:16px;color:#172033;font-size:18px;font-weight:900;border-bottom:3px solid #6657f5}.finx-card,.finx-kpi-card,.finx-section{break-inside:avoid;box-shadow:none!important}}
