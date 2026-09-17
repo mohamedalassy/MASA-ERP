@@ -1,0 +1,10 @@
+/* MASA ERP finance bridge.
+   The detailed accounting visual system lives in accounting-core.css,
+   finance-enterprise.css and missing-pages.css. */
+.finance-page,
+.finance-dashboard,
+.finance-shell {
+  width: 100%;
+  max-width: 1680px;
+  margin: 0 auto;
+}

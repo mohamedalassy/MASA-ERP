@@ -1,63 +1,117 @@
 import { Suspense, lazy, useState } from "react";
-import FinanceDashboard from "./pages/finance/FinanceDashboard";
-import "./styles/finance.css";
-import ProductAlternatives from "./pages/ProductAlternatives";
-import PricingPackages from "./pages/PricingPackages";
-import HrEmployeeProfile from "./pages/HR/HrEmployeeProfile";
-import SuggestedPriceCalculator from "./pages/SuggestedPriceCalculator";
-import PricingRules from "./pages/PricingRules";
-import PriceHistory from "./pages/PriceHistory";
-import CostingEngine from "./pages/CostingEngine";
-import PricingReports from "./pages/PricingReports";
-import CashFlowStatement from "./pages/finance/CashFlowStatement";
+
+import FinanceDashboard from "../views/pages/finance/FinanceDashboard";
+import ProductAlternatives from "../views/pages/ProductAlternatives";
+import PricingPackages from "../views/pages/PricingPackages";
+import HrEmployeeProfile from "../views/pages/HR/HrEmployeeProfile";
+import SuggestedPriceCalculator from "../views/pages/SuggestedPriceCalculator";
+import PricingRules from "../views/pages/PricingRules";
+import PriceHistory from "../views/pages/PriceHistory";
+import CostingEngine from "../views/pages/CostingEngine";
+import PricingReports from "../views/pages/PricingReports";
+import CashFlowStatement from "../views/pages/finance/CashFlowStatement";
 
 import Sidebar from "./components/layout/Sidebar";
 import Topbar from "./components/layout/Topbar";
+
 import AppLauncher from "./components/apps/AppLauncher";
 import ChatPanel from "./components/chat/ChatPanel";
-import Dashboard from "./pages/Dashboard";
-import HrDashboard from "./pages/HR/HrDashboard.jsx";
-import HrOrganization from "./pages/HR/HrOrganization.jsx";
-import HrAttendance from "./pages/HR/HrAttendance.jsx";
-import HrAttendanceDevices from "./pages/HR/HrAttendanceDevices.jsx";
-import WorkOrders from "./pages/WorkOrders";
-import ProjectDetails from "./pages/ProjectDetails";
-import PurchaseOrders from "./pages/PurchaseOrders";
-import PurchaseOrderDetails from "./pages/PurchaseOrderDetails";
-import Inventory from "./pages/Inventory";
-import Quotations from "./pages/Quotations";
-import PriceList from "./pages/PriceList";
-import PricingDashboard from "./pages/PricingDashboard";
-import QuotationBuilder from "./pages/QuotationBuilder";
-import SupplierPrices from "./pages/SupplierPrices";
-import PricingApprovals from "./pages/PricingApprovals";
-import ChartOfAccounts from "./pages/finance/ChartOfAccounts";
-import JournalEntries from "./pages/finance/JournalEntries";
-import GeneralLedger from "./pages/finance/GeneralLedger";
-import IncomeStatement from "./pages/finance/IncomeStatement";
-import "./styles/finance-enterprise.css";
-import SupplierInvoices from "./pages/finance/SupplierInvoices";
-import BalanceSheet from "./pages/finance/BalanceSheet";
-import HrEmployees from "./pages/HR/HrEmployees";
-const FinanceCustomers = lazy(() => import("./pages/finance/FinanceCustomers"));
-const CollectionsCenter = lazy(() => import("./pages/finance/CollectionsCenter"));
-const VatCenter = lazy(() => import("./pages/finance/VatCenter"));
-const FinanceSuppliers = lazy(() => import("./pages/finance/FinanceSuppliers"));
-const FinanceBanks = lazy(() => import("./pages/finance/FinanceBanks"));
-const BankReconciliation = lazy(() => import("./pages/finance/BankReconciliation"));
-const FixedAssets = lazy(() => import("./pages/finance/FixedAssets"));
-const FinanceCostCenters = lazy(() => import("./pages/finance/FinanceCostCenters"));
-const FinanceProjects = lazy(() => import("./pages/finance/FinanceProjects"));
-const ProjectFinancialCenter = lazy(() => import("./pages/finance/ProjectFinancialCenter"));
-const FinanceReports = lazy(() => import("./pages/finance/FinanceReports"));
-const TaxInvoiceCenter = lazy(() => import("./pages/finance/TaxInvoiceCenter"));
-const TaxInvoiceCreate = lazy(() => import("./pages/finance/TaxInvoiceCreate"));
-const TaxInvoiceDetails = lazy(() => import("./pages/finance/TaxInvoiceDetails"));
-const CompanyTaxProfile = lazy(() => import("./pages/finance/CompanyTaxProfile"));
-const CustomerTaxProfile = lazy(() => import("./pages/finance/CustomerTaxProfile"));
-import "./styles/accounting-core.css";
 
-import "./styles/master.css";
+import Dashboard from "../views/pages/Dashboard";
+import HrDashboard from "../views/pages/HR/HrDashboard.jsx";
+import HrOrganization from "../views/pages/HR/HrOrganization.jsx";
+import HrAttendance from "../views/pages/HR/HrAttendance.jsx";
+import HrAttendanceDevices from "../views/pages/HR/HrAttendanceDevices.jsx";
+
+import WorkOrders from "../views/pages/WorkOrders";
+import ProjectDetails from "../views/pages/ProjectDetails";
+import PurchaseOrders from "../views/pages/PurchaseOrders";
+import PurchaseOrderDetails from "../views/pages/PurchaseOrderDetails";
+import Inventory from "../views/pages/Inventory";
+import Quotations from "../views/pages/Quotations";
+import PriceList from "../views/pages/PriceList";
+import PricingDashboard from "../views/pages/PricingDashboard";
+import QuotationBuilder from "../views/pages/QuotationBuilder";
+import SupplierPrices from "../views/pages/SupplierPrices";
+import PricingApprovals from "../views/pages/PricingApprovals";
+
+import ChartOfAccounts from "../views/pages/finance/ChartOfAccounts";
+import JournalEntries from "../views/pages/finance/JournalEntries";
+import GeneralLedger from "../views/pages/finance/GeneralLedger";
+import IncomeStatement from "../views/pages/finance/IncomeStatement";
+import SupplierInvoices from "../views/pages/finance/SupplierInvoices";
+import BalanceSheet from "../views/pages/finance/BalanceSheet";
+
+import HrEmployees from "../views/pages/HR/HrEmployees";
+
+const FinanceCustomers = lazy(() =>
+  import("../views/pages/finance/FinanceCustomers")
+);
+
+const CollectionsCenter = lazy(() =>
+  import("../views/pages/finance/CollectionsCenter")
+);
+
+const VatCenter = lazy(() =>
+  import("../views/pages/finance/VatCenter")
+);
+
+const FinanceSuppliers = lazy(() =>
+  import("../views/pages/finance/FinanceSuppliers")
+);
+
+const FinanceBanks = lazy(() =>
+  import("../views/pages/finance/FinanceBanks")
+);
+
+const BankReconciliation = lazy(() =>
+  import("../views/pages/finance/BankReconciliation")
+);
+
+const FixedAssets = lazy(() =>
+  import("../views/pages/finance/FixedAssets")
+);
+
+const FinanceCostCenters = lazy(() =>
+  import("../views/pages/finance/FinanceCostCenters")
+);
+
+const FinanceProjects = lazy(() =>
+  import("../views/pages/finance/FinanceProjects")
+);
+
+const ProjectFinancialCenter = lazy(() =>
+  import("../views/pages/finance/ProjectFinancialCenter")
+);
+
+const FinanceReports = lazy(() =>
+  import("../views/pages/finance/FinanceReports")
+);
+
+const TaxInvoiceCenter = lazy(() =>
+  import("../views/pages/finance/TaxInvoiceCenter")
+);
+
+const TaxInvoiceCreate = lazy(() =>
+  import("../views/pages/finance/TaxInvoiceCreate")
+);
+
+const TaxInvoiceDetails = lazy(() =>
+  import("../views/pages/finance/TaxInvoiceDetails")
+);
+
+const CompanyTaxProfile = lazy(() =>
+  import("../views/pages/finance/CompanyTaxProfile")
+);
+
+const CustomerTaxProfile = lazy(() =>
+  import("../views/pages/finance/CustomerTaxProfile")
+);
+
+import "../css/finance.css";
+import "../css/finance-enterprise.css";
+import "../css/accounting-core.css";
+import "../css/master.css";
 
 function App() {
   const [activeView, setActiveView] = useState("dashboard");
